@@ -29,6 +29,12 @@ Atualmente estudo e aplico tecnologias como **React, Node.js, TypeScript e UX/UI
 
 ---
 
+## 🎥 Demonstração
+
+https://github.com/user-attachments/assets/b2f3733f-a0db-4527-a4d6-6f40935f8f88
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 - HTML5
@@ -54,12 +60,6 @@ Atualmente estudo e aplico tecnologias como **React, Node.js, TypeScript e UX/UI
 ## 🎯 Objetivo do Portfólio
 
 Este portfólio foi criado para **demonstrar minha evolução como desenvolvedor**, minhas habilidades técnicas e minha capacidade de organizar projetos reais, buscando oportunidades como **Desenvolvedor Júnior / Trainee / Freelancer**.
-
----
-
-## 🎥 Demonstração
-
-https://github.com/user-attachments/assets/b2f3733f-a0db-4527-a4d6-6f40935f8f88
 
 ---
 
