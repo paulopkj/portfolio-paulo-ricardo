@@ -1,0 +1,1073 @@
+/* ================= VARIÁVEIS ================= */
+:root {
+  font-size: 62.5%;
+
+  --fundo: #0f0f14;
+  --fundo-suave: #1a1a2e;
+  --gradiente-fundo: linear-gradient(135deg, #0f0f14, #1a1a2e);
+
+  --texto: #eaeaea;
+  --texto-suave: #bdbdbd;
+
+  --primaria: #7f5af0;
+  --secundaria: #2cb67d;
+
+  --borda: rgba(255, 255, 255, 0.1);
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  overflow-x: hidden;
+}
+
+/* ================= CABEÇALHO ================= */
+.cabecalho {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.navegacao {
+  max-width: 120rem;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.2rem;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primaria);
+}
+
+/* ================= MENU ================= */
+.menu {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.menu a {
+  font-size: 1.6rem;
+  color: var(--texto);
+  text-decoration: none;
+  position: relative;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  width: 0;
+  height: 0.2rem;
+  background: var(--primaria);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* ================= MENU MOBILE ================= */
+.botao-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-menu span {
+  width: 2.5rem;
+  height: 0.3rem;
+  background: var(--texto);
+  border-radius: 2rem;
+}
+
+/* ================= SEÇÕES ================= */
+.secao {
+  min-height: 100vh;
+  padding: 12rem 2rem 6rem;
+  display: flex;
+  align-items: center;
+  background: var(--gradiente-fundo);
+}
+
+.container {
+  max-width: 120rem;
+  margin: auto;
+}
+
+/* ================= INÍCIO ================= */
+.inicio {
+  justify-content: center;
+}
+
+.inicio-texto {
+  text-align: center;
+}
+
+.inicio-texto h1 {
+  font-size: 4.2rem;
+  margin-bottom: 2rem;
+}
+
+.inicio-texto h1 span {
+  color: var(--primaria);
+}
+
+.inicio-texto p {
+  font-size: 1.6rem;
+  color: var(--texto-suave);
+  margin-bottom: 3rem;
+}
+
+.inicio-botoes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* ================= BOTÕES ================= */
+.botao {
+  padding: 1.2rem 2.8rem;
+  text-decoration: none;
+  border-radius: 1.2rem;
+
+  color: #fff;
+  background: linear-gradient(120deg, var(--primaria), var(--secundaria));
+  transition: all 0.4s ease;
+  font-size: 12px;
+}
+
+.botao:hover {
+  transform: translateY(-0.9rem);
+  box-shadow: 0 0.5rem 3rem rgba(127, 90, 240, 0.4);
+}
+
+.outline {
+  background: transparent;
+  border: 0.2rem solid var(--primaria);
+}
+
+.outline:hover {
+  color: #fff;
+  box-shadow: 0 0.5rem 3rem rgba(127, 90, 240, 0.4);
+}
+
+/* ================= SOBRE ================= */
+
+.sobre-conteudo-container {
+  display: flex;
+  justify-content: space-between; /* texto esquerda | imagem direita */
+  align-items: center;
+  gap: 20rem; /* distância entre texto e imagem */
+  flex-wrap: wrap;
+}
+
+/* TEXTO */
+.sobre-texto .pargrafo-sobre {
+  flex: 1; /* ocupa o espaço disponível */
+  max-width: 700px;
+  color: var(--texto-suave);
+}
+
+.titulo-sobre {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.titulo-sobre span {
+  color: var(--primaria);
+}
+
+/* PARÁGRAFO */
+.pargrafo-sobre {
+  font-size: 1.8rem;
+  color: var(--texto-suave);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.sobre-texto p span {
+  color: var(--primaria);
+  font-weight: bold;
+}
+
+.sobre-texto p span {
+  color: var(--primaria);
+  font-weight: bold;
+}
+
+/* IMAGEM */
+.sobre-imagem {
+  flex-shrink: 0; /* impede a imagem de esmagar */
+}
+
+.sobre-imagem img {
+  width: 300px;
+  height: 350px;
+  border-radius: 50%;
+  border: solid 0.4rem var(--borda);
+  object-fit: cover;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+  animation: flutuar 4s ease-in-out infinite;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.sobre-imagem img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    #7f5af0 0 0 2rem,
+    #2cb67d 0 0 4rem;
+}
+
+.sobre-imagem img:not(:hover) {
+  transform: scale(1);
+  filter: brightness(1);
+  opacity: 1;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1200px) {
+  .sobre-conteudo-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto {
+    max-width: 100%;
+  }
+}
+
+/* ANIMAÇÃO FLUTUAR */
+@keyframes flutuar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ================= PROJETOS ================= */
+.grade-projetos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+/* 
+   CARD DO PROJETO
+   - Estrutura principal do projeto
+   - Efeito de profundidade e elevação
+*/
+
+.card-projeto {
+  width: 30rem; /* ou max-width */
+  background: linear-gradient(
+    180deg,
+    var(--fundo-suave),
+    rgba(255, 255, 255, 0.02)
+  );
+  padding: 2.5rem;
+  border-radius: 2rem;
+  border: 1px solid var(--borda);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 6rem;
+
+  /* 🔥 isola o hover */
+  will-change: transform;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* EFEITO DE LUZ SUAVE NO HOVER (OVERLAY INTERNO) */
+.card-projeto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(127, 90, 240, 0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* ATIVA O OVERLAY NO HOVER */
+.card-projeto:hover::before {
+  opacity: 1;
+}
+
+/* ELEVAÇÃO E DESTAQUE DO CARD */
+.card-projeto:hover {
+  transform: translateY(-0.35rem);
+  border-color: var(--primaria);
+  box-shadow:
+    0 1.5rem 3rem rgba(0, 0, 0, 0.4),
+    0 0 1.8rem rgba(127, 90, 240, 0.3);
+}
+
+section .projeto-titulo {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+section .projeto-titulo span {
+  color: var(--primaria);
+}
+
+/* 
+   IMAGEM DO PROJETO
+   - Contém a imagem
+   - Aplica zoom e overlay no hover
+ */
+.projeto-imagem {
+  height: 16rem;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  position: relative;
+}
+
+/* OVERLAY ESCURO PARA DAR CONTRASTE NO HOVER */
+.projeto-imagem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* ATIVA O OVERLAY QUANDO PASSA O MOUSE NO CARD */
+.card-projeto:hover .projeto-imagem::after {
+  opacity: 1;
+}
+
+/* IMAGEM EM SI */
+.projeto-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Zoom suave */
+  transition: transform 1.6s ease;
+}
+
+/* ZOOM DA IMAGEM NO HOVER */
+.card-projeto:hover .projeto-imagem img {
+  transform: scale(1.1);
+}
+
+/* 
+   CONTEÚDO DO PROJETO
+   - Título
+   - Descrição
+   - CTA
+ */
+.projeto-conteudo {
+  margin-top: 2rem;
+  text-align: center; /* ✅ centraliza o botão */
+}
+
+/* TÍTULO DO PROJETO */
+.projeto-conteudo h3 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.projeto-conteudo h3 span {
+  color: var(--primaria);
+}
+
+/* DESCRIÇÃO DO PROJETO */
+.projeto-conteudo p {
+  font-size: 1.4rem;
+  text-align: center;
+  opacity: 0.85;
+  margin-bottom: 1.8rem;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+/* BOTÃO / CTA DO PROJETO
+   - Estilo chamativo
+   - Incentiva clique */
+.projeto-conteudo a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 2.2rem;
+  border-radius: 1.2rem;
+  background: linear-gradient(135deg, #7f5af0, #2cb67d);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.4rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition:  /* Transições suaves para o CTA */
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* INTERAÇÃO DO CTA */
+.projeto-conteudo a:hover {
+  transform: translateY(-0.4rem) scale(1.03);
+  filter: brightness(1.15);
+  box-shadow: 0 1rem 2.5rem rgba(127, 90, 240, 0.55);
+}
+
+/* EFEITO DE BRILHO NO CTA */
+.projeto-conteudo a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.projeto-conteudo a:hover::after {
+  opacity: 1;
+}
+
+/* 
+   ANIMAÇÃO EM CASCATA – CARDS DE PROJETO
+   Cada card entra com um pequeno atraso
+ */
+
+.grade-projetos .card-projeto {
+  opacity: 0;
+  transform: translateY(4rem) scale(0.96);
+  transition:
+    opacity 0.6s ease,
+    transform 1.6s ease;
+}
+
+/* Quando o container receber .ativo */
+.grade-projetos.ativo .card-projeto {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Efeito cascata (delay progressivo) */
+.grade-projetos.ativo .card-projeto:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.grade-projetos.ativo .card-projeto:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.grade-projetos.ativo .card-projeto:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.grade-projetos.ativo .card-projeto:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.grade-projetos.ativo .card-projeto:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+/* =====================================================
+   MODAL DE PROJETO
+===================================================== */
+
+.modal-projeto {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+}
+
+.modal-projeto.ativo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-conteudo {
+  background: var(--fundo-suave);
+  border-radius: 2rem;
+  padding: 3rem;
+  max-width: 50rem;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: modalEntrada 0.5s ease;
+}
+
+.modal-conteudo img {
+  width: 100%;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal-conteudo h3 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.modal-conteudo p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.modal-conteudo a {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 3rem;
+  background: linear-gradient(135deg, #7f5af0, #2cb67d);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ===============================
+   PROJETOS OCULTOS
+=============================== */
+
+.projeto-extra {
+  display: none;
+}
+
+/* Quando ativo, mostra os projetos */
+.projeto-extra.ativo {
+  display: block;
+}
+
+/* ===============================
+   ANIMAÇÃO DOS PROJETOS EXTRAS
+=============================== */
+
+.projeto-extra {
+  display: none;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* Quando ativo */
+.projeto-extra.ativo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 
+   RESPONSIVIDADE - PROJETOS
+*/
+
+@media (max-width: 768px) {
+  .grade-projetos {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .projeto-titulo {
+    text-align: center;
+    font-size: 2.6rem;
+  }
+
+  .projeto-titulo span {
+    display: inline-block;
+  }
+
+  .btn-ver-todos-os-projetos {
+    display: inline-block;
+    margin: 3rem auto 0;
+    text-align: center;
+  }
+
+  .projetos .container {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* BOTÃO FECHAR */
+.modal-fechar {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+/* ================= BTN VER TODOS OS PROJETOS ================= */
+
+.secao .btn-ver-todos-os-projetos {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #7f5af0, #2cb67d);
+  padding: 1.2rem 2.8rem;
+  border-radius: 1.2rem;
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.secao .btn-ver-todos-os-projetos:hover {
+  transform: translateY(-0.9rem);
+  box-shadow: 0 0.5rem 3rem rgba(127, 90, 240, 0.4);
+}
+
+/* ANIMAÇÃO DO MODAL */
+@keyframes modalEntrada {
+  from {
+    transform: translateY(2rem) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================= TECNOLOGIAS ================= */
+/* 
+  SEÇÃO TECNOLOGIAS
+  - Estilo base da seção
+  - Centraliza conteúdo e textos
+*/
+.tecnologias {
+  text-align: center;
+}
+
+/* Título da seção */
+.tecnologias h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tecnologias h2 span {
+  color: var(--primaria);
+}
+
+/* Texto descritivo abaixo do título */
+.tecnologias p {
+  font-size: 1.8rem;
+  color: var(--texto-suave);
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+/* 
+   CARROSSEL DE TECNOLOGIAS
+   - Container visível do carrossel
+   - Esconde o conteúdo que sai da tela
+*/
+.carrossel-tecnologias {
+  overflow: hidden; /* Esconde imagens fora da área visível */
+  margin-top: 3rem;
+  position: relative;
+}
+
+/* 
+   TRACK (FAIXA DESLIZANTE)
+   - Contém TODAS as imagens (inclusive duplicadas)
+   - Move continuamente da direita para esquerda
+ */
+.carrossel-track {
+  display: flex; /* Coloca imagens lado a lado */
+  gap: 4rem; /* Espaço entre as logos */
+  width: max-content; /* Largura baseada no conteúdo */
+
+  /* Animação contínua e infinita */
+  animation: carrosselInfinito 18s linear infinite;
+}
+
+/* 
+   PAUSA DA ANIMAÇÃO
+   - Ao passar o mouse sobre o carrossel
+ */
+.carrossel-tecnologias:hover .carrossel-track {
+  animation-play-state: paused;
+}
+
+/* 
+   IMAGENS DAS TECNOLOGIAS
+ */
+.carrossel-track img {
+  height: 6rem; /* Tamanho das logos */
+  flex-shrink: 0; /* Impede a imagem de encolher */
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom suave ao passar o mouse */
+.carrossel-track img:hover {
+  transform: scale(1.2);
+}
+
+/* 
+   ANIMAÇÃO INFINITA REAL
+   ⚠️ IMPORTANTE:
+   - Funciona corretamente APENAS se as imagens
+     estiverem DUPLICADAS no HTML
+   - Quando a última imagem sai,
+     a primeira já entra imediatamente
+ */
+@keyframes carrosselInfinito {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    /* Move exatamente metade da track,
+       pois a outra metade é a duplicação */
+    transform: translateX(-50%);
+  }
+}
+
+/* TECNOLOGIAS | RESPONSIVO */
+
+/* Tablets e telas médias */
+@media (max-width: 768px) {
+  .tecnologias h2 {
+    font-size: 3.2rem;
+  }
+
+  .tecnologias p {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    padding: 0 1.5rem; /* evita texto estourar nas bordas */
+  }
+
+  .carrossel-track {
+    gap: 3rem; /* reduz espaço entre logos */
+    animation-duration: 22s; /* movimento mais suave */
+  }
+
+  .carrossel-track img {
+    height: 5rem; /* logos menores */
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  .tecnologias h2 {
+    font-size: 2.8rem;
+  }
+
+  .tecnologias p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+  }
+
+  .carrossel-track {
+    gap: 2.5rem;
+    animation-duration: 26s; /* mais lento para leitura visual */
+  }
+
+  .carrossel-track img {
+    height: 4.2rem;
+  }
+}
+
+/* ================= CONTATO ================= */
+.form-contato {
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background-color: var(--fundo-suave);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--borda);
+  margin: 0 auto;
+}
+
+.secao h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.secao h2 span {
+  color: var(--primaria);
+}
+
+.secao p {
+  max-width: 50rem; /* mesmo limite do form */
+  margin: 0 auto 4rem; /* centraliza e mantém espaçamento */
+  font-size: 1.8rem;
+  color: var(--texto-suave);
+  margin-bottom: 4rem;
+  text-align: center;
+  line-height: 1.6; /* melhora a leitura */
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 1.4rem;
+  border-radius: 1rem;
+  border: 1px solid var(--borda);
+  background: var(--fundo-suave);
+  color: var(--texto);
+  outline: none;
+  font-size: 1.4rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-contato textarea {
+  min-height: 12rem;
+}
+
+/* Foco suave nos campos */
+
+.feedback-form {
+  display: none;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.feedback-form.sucesso {
+  display: block;
+  color: #2cb67d;
+}
+
+.feedback-form.erro {
+  display: block;
+  color: #ff6b6b;
+}
+
+.form-contato button {
+  align-self: center;
+}
+
+/* Garante bom comportamento em telas menores */
+@media (max-width: 768px) {
+  .form-contato {
+    max-width: 100%;
+    padding: 2rem;
+  }
+}
+
+/* Ajustes finos para mobile */
+@media (max-width: 480px) {
+  .form-contato {
+    padding: 1.8rem;
+    border-radius: 1.2rem;
+  }
+
+  .secao h2 {
+    font-size: 3.2rem;
+  }
+
+  .secao p {
+    font-size: 1.6rem;
+  }
+}
+
+/* ================= BOTÃO WHATSAPP FIXO ================= */
+
+.botao-whatsapp {
+  position: fixed;
+  right: 4.5rem;
+  bottom: 4.5rem;
+  width: 6.2rem;
+  height: 6.2rem;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  z-index: 999;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.botao-whatsapp img {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+/* Hover suave e profissional */
+.botao-whatsapp:hover {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Ajustes para mobile */
+@media (max-width: 480px) {
+  .botao-whatsapp {
+    width: 5.6rem;
+    height: 5.6rem;
+    right: 2rem;
+    bottom: 2rem;
+  }
+
+  .botao-whatsapp img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* ================= PULSO INTERVALADO WHATSAPP ================= */
+
+.botao-whatsapp {
+  animation: pulseWhatsIntervalado 3s infinite;
+}
+
+/* Pulso com intervalo */
+@keyframes pulseWhatsIntervalado {
+  /* Estado normal (parado) */
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+
+  /* Início do pulso */
+  10% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+
+  /* Pico do pulso */
+  25% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+  }
+
+  /* Volta ao normal */
+  35% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+
+  /* Tempo parado (sem animação) */
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ================= RODAPÉ ================= */
+.rodape {
+  text-align: center;
+  padding: 2rem;
+  background: #0a0a10;
+  color: var(--texto-suave);
+  font-size: 1.3rem;
+  gap: 2rem;
+}
+
+.rodape div {
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+.rodape img:hover {
+  transform: translateY(-0.4rem) scale(1.03);
+  filter: brightness(1.15);
+}
+
+/* ================= ANIMAÇÕES ================= */
+.revelar {
+  opacity: 0;
+  transform: translateY(4rem);
+  transition: 0.8s ease;
+}
+
+.revelar.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    inset: 0;
+    background: var(--fundo);
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: 0.4s;
+  }
+
+  .menu.ativo {
+    transform: translateX(0);
+  }
+
+  .botao-menu {
+    display: flex;
+  }
+
+  .sobre-conteudo-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
