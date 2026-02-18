@@ -31,7 +31,7 @@ Atualmente estudo e aplico tecnologias como **React, Node.js, TypeScript e UX/UI
 
 ## 🎥 Demonstração
 
-https://github.com/user-attachments/assets/b2f3733f-a0db-4527-a4d6-6f40935f8f88
+https://github.com/user-attachments/assets/4db77e43-1f55-4a90-99db-5d7d27346432
 
 ---
 
