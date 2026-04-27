@@ -91,23 +91,6 @@ body {
   width: 100%;
 }
 
-/* ================= MENU MOBILE ================= */
-.botao-menu {
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.botao-menu span {
-  width: 2.5rem;
-  height: 0.3rem;
-  background: var(--texto);
-  border-radius: 2rem;
-}
-
 /* ================= SEÇÕES ================= */
 .secao {
   min-height: 100vh;
