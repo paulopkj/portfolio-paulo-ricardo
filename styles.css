@@ -874,8 +874,14 @@ section .projeto-titulo span {
   }
 }
 
-/* Smartphones */
-@media (max-width: 480px) {
+/* Smartphones e table*/
+@media (max-width: 768px) {
+
+  /* Remove o efeito de desfoque e fundo do cabeçalho para melhor legibilidade no mobile */
+  .cabecalho{
+    backdrop-filter:none;
+    background: none;
+  }
 
   .container-revelar{
     padding: 0 1rem; /* mais espaço para o conteúdo */
