@@ -38,7 +38,10 @@ Meu objetivo é transformar ideias em experiências digitais modernas, funcionai
 
 <div align="center">
 
-COLOCAR VIDEO OU FOTOS
+<img width="1431" height="810" alt="Captura de Tela 2026-06-01 às 20 25 56" src="https://github.com/user-attachments/assets/681b090b-06ed-443e-8ef6-09f6622a2eb8" />
+<img width="1428" height="812" alt="Captura de Tela 2026-06-01 às 20 26 33" src="https://github.com/user-attachments/assets/28cd0b2d-b0be-4aba-8ab2-d5d92f015308" />
+<img width="1425" height="810" alt="Captura de Tela 2026-06-01 às 20 27 01" src="https://github.com/user-attachments/assets/4869e604-c010-4d30-97fa-1e1423c6fa44" />
+
 
 </div>
 
@@ -88,7 +91,6 @@ Este portfólio foi desenvolvido para apresentar:
 
 ```bash
 📁 assets
-📁 img
 📄 index.html
 📄 styles.css
 📄 script.js
