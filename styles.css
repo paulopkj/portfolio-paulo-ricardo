@@ -946,6 +946,7 @@ section#sobre {
 
 .sobre-imagem img {
   width: 100%;
+  margin-top: 40px;
   max-width: 360px;
   cursor: pointer;
   border-radius: 50%;
@@ -1041,6 +1042,7 @@ section#sobre {
   /* IMAGEM */
 
   .sobre-imagem img {
+    margin-top: 40;
     max-width: 260px;
     border-radius: 50%;
   }
@@ -1067,10 +1069,9 @@ section#sobre {
 
 .projeto-titulo {
   text-align: center;
-  text-align: center;
   font-size: clamp(3.5rem, 5vw, 5.5rem);
-  margin-bottom: 2rem;
-  margin-top: -6rem;
+  margin-bottom: 5rem;
+
   position: relative;
   font-family: "Cinzel", serif;
 }
@@ -1338,7 +1339,7 @@ section#sobre {
 
 /* RESPONSIVIDADE — TELAS MUITO GRANDES */
 
-@media (max-width: 2400px) {
+@media (max-width: 2900px) {
   .projeto-titulo {
     top: 40px;
     font-size: clamp(4rem, 6vw, 7rem);
@@ -1481,6 +1482,8 @@ section#sobre {
 }
 
 .card-certificado {
+  align-items: center;
+  text-align: center;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
@@ -1525,6 +1528,29 @@ section#sobre {
 .card-certificado a:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 18px rgba(138, 43, 226, 0.28);
+}
+
+/* CERTIFICADOS EM ANDAMENTO
+   APAGA ESSA class: certificado-em-andamento
+   ELA É APENAS PARA DEIXAR OS CERTIFICADOS EM ANDAMENTO
+   COM UM ESTILO DIFERENTE, MAS SE VOCÊ QUISER, 
+   PODE REMOVER E DEIXAR TODOS OS CERTIFICADOS IGUAIS
+*/
+
+.certificado-em-andamento {
+  opacity: 0.7;
+  filter: grayscale(100%);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.certificado-em-andamento h3 {
+  color: #bdbdbd;
+}
+
+.certificado-em-andamento a {
+  background: #555;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* ==========================================
@@ -2164,3 +2190,4 @@ section#contato {
     width: 24px;
   }
 }
+
