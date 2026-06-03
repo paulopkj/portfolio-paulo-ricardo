@@ -170,28 +170,34 @@ if (formularioContato) {
     '.form-contato button[type="submit"]',
   );
 
-  formularioContato.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    botaoEnviar.disabled = true;
+formularioContato.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
-    botaoEnviar.textContent = "Enviando...";
+  botaoEnviar.disabled = true;
+  botaoEnviar.textContent = "Enviando...";
+  feedbackFormulario.textContent = "Enviando mensagem...";
 
-    feedbackFormulario.textContent = "Enviando mensagem...";
+  try {
+    await emailjs.sendForm(
+      "service_3jkvnr9",
+      "template_eyrgrc2",
+      formularioContato
+    );
 
-    try {
-      await emailjs.sendForm(
-        "service_3jkvnr9",
-        "template_eyrgrc2",
-        formularioContato,
-      );
+    feedbackFormulario.textContent =
+      "✅ Mensagem enviada com sucesso!";
 
-      feedbackFormulario.textContent = "✅ Mensagem enviada com sucesso!";
+    formularioContato.reset();
+  } catch (erro) {
+    feedbackFormulario.textContent =
+      "❌ Erro ao enviar mensagem.";
 
-      formularioContato.reset();
-    } catch (erro) {
-      feedbackFormulario.textContent = "❌ Erro ao enviar mensagem.";
-
-      console.error(erro);
-    }
-  });
+    console.error(erro);
+  } finally {
+    setTimeout(() => {
+      botaoEnviar.disabled = false;
+      botaoEnviar.textContent = "Enviar mensagem";
+    }, 2000);
+  }
+});
 }
